@@ -1,3 +1,3 @@
-class SubscriptionDetails < ApplicationRecord
+class SubscriptionDetail < ApplicationRecord
   belongs_to :subscription, required: true
 end
