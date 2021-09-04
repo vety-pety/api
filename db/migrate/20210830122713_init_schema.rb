@@ -9,41 +9,41 @@ class InitSchema < ActiveRecord::Migration[6.1]
   private
 
   def create_users_table
-    create_table :users, id: :serial do |t|
-      t.string :name, null: false
-      t.string :email, null: false
-      t.string :phone, limit: 20
-      t.boolean :is_subscribed
+    create_table(:users, id: :serial) do |t|
+      t.string(:name, null: false)
+      t.string(:email, null: false)
+      t.string(:phone, limit: 20)
+      t.boolean(:is_subscribed)
 
       t.timestamps
     end
   end
 
   def create_animals_table
-    create_table :animals, id: :serial do |t|
-      t.string :name, null: false
-      t.integer :age
-      t.string :species, null: false
-      t.references :user, null: false, foreign_key: true
+    create_table(:animals, id: :serial) do |t|
+      t.string(:name, null: false)
+      t.integer(:age)
+      t.string(:species, null: false)
+      t.references(:user, null: false, foreign_key: true)
 
       t.timestamps
     end
   end
 
   def create_subscriptions_table
-    create_table :subscriptions, id: :serial do |t|
-      t.references :animal, null: false, foreign_key: true
-      t.datetime :subscribed_until, null: false
+    create_table(:subscriptions, id: :serial) do |t|
+      t.references(:animal, null: false, foreign_key: true)
+      t.datetime(:subscribed_until, null: false)
 
       t.timestamps
     end
   end
 
   def create_subscription_details_table
-    create_table :subscription_details, id: :serial do |t|
-      t.string :type, null: false
-      t.integer :quantity, default: 0, null: false
-      t.references :subscription, null: false, foreign_key: true
+    create_table(:subscription_details, id: :serial) do |t|
+      t.string(:type, null: false)
+      t.integer(:quantity, default: 0, null: false)
+      t.references(:subscription, null: false, foreign_key: true)
 
       t.timestamps
     end
