@@ -23,7 +23,7 @@ Things you may want to cover:
 
 
 
-#Build 
+# Build 
 
 After installing ruby 2.6.6 and postgresql@11 run below commands:
 
