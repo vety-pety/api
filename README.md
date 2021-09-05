@@ -27,6 +27,7 @@ Things you may want to cover:
 
 After installing ruby 2.6.6 and postgresql@11 run below commands:
 
+- bundle install
 - rails db:create
 - rails db:schema:load && rails db:schema:load RAILS_ENV=test
 - rails db:seed
