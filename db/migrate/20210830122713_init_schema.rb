@@ -12,6 +12,7 @@ class InitSchema < ActiveRecord::Migration[6.1]
     create_table(:users, id: :serial) do |t|
       t.string(:name, null: false)
       t.string(:email, null: false)
+      t.string(:encrypted_password, default: '', null: false)
       t.string(:phone, limit: 20)
       t.boolean(:is_subscribed)
 
