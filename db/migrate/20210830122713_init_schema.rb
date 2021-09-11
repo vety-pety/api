@@ -4,6 +4,7 @@ class InitSchema < ActiveRecord::Migration[6.1]
     create_animals_table
     create_subscriptions_table
     create_subscription_details_table
+    create_subscription_plans_table
   end
 
   private
@@ -46,6 +47,16 @@ class InitSchema < ActiveRecord::Migration[6.1]
       t.string(:type, null: false)
       t.integer(:quantity, default: 0, null: false)
       t.references(:subscription, null: false, foreign_key: true)
+
+      t.timestamps
+    end
+  end
+
+  def create_subscription_plans_table
+    create_table(:subscription_plans, id: :serial) do |t|
+      t.string(:description, null: false)
+      t.decimal(:price, null: false, precision: 6, scale: 2)
+      t.json(:details, deafult: {}, null: false)
 
       t.timestamps
     end

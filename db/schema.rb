@@ -76,6 +76,14 @@ ActiveRecord::Schema.define(version: 2021_09_09_190754) do
     t.index ["subscription_id"], name: "index_subscription_details_on_subscription_id"
   end
 
+  create_table "subscription_plans", id: :serial, force: :cascade do |t|
+    t.string "description", null: false
+    t.decimal "price", precision: 6, scale: 2, null: false
+    t.json "details", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
   create_table "subscriptions", id: :serial, force: :cascade do |t|
     t.bigint "animal_id", null: false
     t.datetime "subscribed_until", null: false

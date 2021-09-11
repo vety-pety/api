@@ -19,3 +19,41 @@ Animal.create!({
                  species: 'dog',
                  user_id: 1
                })
+
+# Care subscription added
+SubscriptionPlan.create!({
+                           description: 'Care',
+                           price:       89,
+                           details:     [
+                             { type: 'Dış Parazit', quantity: 3 },
+                             { type: 'İç Parazit', quantity: 4 },
+                             { type: 'Muayene', quantity: 4 }
+                           ]
+                         })
+
+# Care Up subscription added
+SubscriptionPlan.create!({
+                           description: 'Care Up',
+                           price:       119,
+                           details:     [
+                             { type: 'Yıllık Aşılar', quantity: 3 },
+                             { type: 'Dış Parazit', quantity: 4 },
+                             { type: 'İç Parazit', quantity: 4 },
+                             { type: 'Muayene', quantity: 6 },
+                             { type: 'Banyo ve Tıraş', quantity: 2 }
+                           ]
+                         })
+
+# Care All subscription added
+SubscriptionPlan.create!({
+                           description: 'Care All',
+                           price:       159,
+                           details:     [
+                             { type: 'Yıllık Aşılar', quantity: 4 },
+                             { type: 'Dış Parazit', quantity: 4 },
+                             { type: 'İç Parazit', quantity: 6 },
+                             { type: 'Muayene', quantity: 6 },
+                             { type: 'Banyo ve Tıraş', quantity: 4 },
+                             { type: 'Tırnak Kesimi', quantity: 2 }
+                           ]
+                         })
