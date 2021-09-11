@@ -9,13 +9,13 @@ Doorkeeper.configure do
     if user&.authenticate(params[:password])
       user
     else
-      raise Doorkeeper::Errors::DoorkeeperError.new('invalid_user_or_password')
+      raise Doorkeeper::Errors::DoorkeeperError, 'invalid_user_or_password'
     end
   end
 
   # This block will be called to check whether the resource owner is authenticated or not.
   resource_owner_authenticator do
-    fail "Please configure doorkeeper resource_owner_authenticator block located in #{__FILE__}"
+    raise "Please configure doorkeeper resource_owner_authenticator block located in #{__FILE__}"
     # Put your resource owner authentication logic here.
     # Example implementation:
     #   User.find_by_id(session[:user_id]) || redirect_to(new_user_session_url)

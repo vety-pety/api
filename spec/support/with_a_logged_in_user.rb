@@ -8,7 +8,7 @@ RSpec.shared_context 'with a logged in user' do
   let(:headers) do
     {
       'Authorization' => "Bearer #{token}",
-      'Content-Type' => 'application/vnd.api+json',
+      'Content-Type'  => 'application/vnd.api+json'
     }
   end
 end
