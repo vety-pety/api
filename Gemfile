@@ -36,6 +36,9 @@ gem 'awesome_print', '1.8.0'
 gem 'active_model_serializers', '~> 0.10.0'
 gem 'jsonapi-rails'
 
+gem 'bcrypt'
+gem 'doorkeeper'
+
 group :development, :test do
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
   gem 'spring'
@@ -78,7 +81,13 @@ group :development, :test do
   gem 'listen', '>= 3.0.5', '< 3.2'
 
   gem 'byebug', platforms: %i[mri mingw x64_mingw]
+  gem 'pry-rails'
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: %i[mingw mswin x64_mingw jruby]
+
+group :production do
+  gem 'rack-attack'
+end
+
