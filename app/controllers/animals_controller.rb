@@ -1,5 +1,5 @@
 class AnimalsController < ApplicationController
   def index
-    render json: Animal.all
+    render jsonapi: Animal.all
   end
 end

@@ -5,5 +5,5 @@ Rails.application.routes.draw do
 
   resources :users, only: [:create]
   resources :animals, only: [:index]
-  resources :subscription_plans, only: [:index]
+  resources :subscription_plans, only: [:index, :show]
 end
