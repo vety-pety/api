@@ -5,5 +5,11 @@ Rails.application.routes.draw do
 
   resources :users, only: [:create]
   resources :animals, only: [:index]
-  resources :subscription_plans, only: [:index, :show]
+
+  resources :subscription_plans, only: [:index, :show] do
+    member do
+      post :make_payment
+    end
+  end
+
 end
