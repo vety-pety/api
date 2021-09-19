@@ -11,8 +11,7 @@ class SubscriptionPlansController < ApplicationController
   end
 
   def make_payment
-    binding.pry
-    find_subscription_plan
+    # empty for now. 
   end
 
   private
