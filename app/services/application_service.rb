@@ -1,5 +1,6 @@
 class ApplicationService
   class ServiceError < StandardError; end
+
   class ServiceFailedError < ActiveRecord::Rollback; end
 
   CANNOT_BE_EMPTY = I18n.t('errors.messages.empty')
@@ -48,7 +49,7 @@ class ApplicationService
 
   def self.before_action(method, &block)
     @before_actions ||= []
-    @before_actions << (block_given? ? [method, block] : method)
+    @before_actions << (block ? [method, block] : method)
   end
 
   protected

@@ -3,5 +3,5 @@ class AnimalForm
     :age, :name, :species
   ]
 
-  belongs_to :user,  form:  UserForm,
+  belongs_to :user,  form:  UserForm
 end

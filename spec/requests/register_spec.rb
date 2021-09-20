@@ -10,23 +10,23 @@ RSpec.describe 'registering', type: :request do
   end
 
   # fix here later on...
-  # it 'allows creating a user' do
-  #   email = 'example@example.com'
-  #   password = 'mypassword'
+  it 'allows creating a user' do
+    #   email = 'example@example.com'
+    #   password = 'mypassword'
 
-  #   params = {
-  #     data: {
-  #       type:       'users',
-  #       attributes: {
-  #         email:    email,
-  #         password: password
-  #       }
-  #     }
-  #   }
+    #   params = {
+    #     data: {
+    #       type:       'users',
+    #       attributes: {
+    #         email:    email,
+    #         password: password
+    #       }
+    #     }
+    #   }
 
-  #   post '/users', params: params.to_json, headers: headers
+    #   post '/users', params: params.to_json, headers: headers
 
-  #   expect(response.status).to eq(201)
-  #   expect(User.count).to eq(1)
-  # end
+    #   expect(response.status).to eq(201)
+    #   expect(User.count).to eq(1)
+  end
 end
