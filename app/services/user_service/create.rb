@@ -2,7 +2,6 @@ class UserService::Create < ApplicationService
   attr_reader :user
 
   def initialize(user)
-    super
     @user = user
   end
 

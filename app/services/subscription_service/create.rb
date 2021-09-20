@@ -2,7 +2,6 @@ class SubscriptionService::Create < ApplicationService
   attr_reader :user, :subscription_plan, :subscription
 
   def initialize(user, subscription_plan)
-    super
     @user = user
     @subscription_plan = subscription_plan
     new_subscription_for_user
