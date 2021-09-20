@@ -16,12 +16,14 @@ class UsersController < ApplicationController
       is_subscribed: attributes["is_subscribed"],
     })
 
-    # couldnt do that manually
-    # animal = user.animals.new({
-    #   name: "",
-    #   age: 2,
-    #   species: "",
-    # })
+    animal_attr = params["_jsonapi"]["data"]["relationships"]["animals"]["data"][0]["attributes"]
+    if animal_attr != nil
+      animal = user.animals.new({
+        name: animal_attr["name"],
+        age: animal_attr["age"],
+        species: animal_attr["species"],
+      })
+    end
 
     service = UserService::Create.call(user)
     

@@ -35,6 +35,7 @@ class InitSchema < ActiveRecord::Migration[6.1]
 
   def create_subscriptions_table
     create_table(:subscriptions, id: :serial) do |t|
+      t.string(:description, null: false)
       t.references(:animal, null: false, foreign_key: true)
       t.datetime(:subscribed_until, null: false)
 

@@ -11,12 +11,23 @@ class SubscriptionPlansController < ApplicationController
   end
 
   def make_payment
-    # empty for now. 
-  end
+    # call payment service here. if it is success...
+    find_subscription_plan
+    find_user(params["_jsonapi"]["data"])
+    service = SubscriptionService::Create.call(@current_user, @subscription_plan)
 
-  private
+    if service.succeeded?
+      render json: service.result #, include: params[:include], status: :created
+    else
+      render_service_errors(service)
+    end
+  end
 
   def find_subscription_plan
     @subscription_plan = SubscriptionPlan.find(params[:id])
+  end
+
+  def find_user(user_id)
+    @current_user = User.find(user_id)
   end
 end

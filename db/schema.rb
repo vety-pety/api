@@ -85,6 +85,7 @@ ActiveRecord::Schema.define(version: 2021_09_09_190754) do
   end
 
   create_table "subscriptions", id: :serial, force: :cascade do |t|
+    t.string "description", null: false
     t.bigint "animal_id", null: false
     t.datetime "subscribed_until", null: false
     t.datetime "created_at", precision: 6, null: false

@@ -9,7 +9,7 @@
 User.create!({
                name:          'Caner Tasan',
                email:         'caner.tasan@hotmail.com',
-               phone:         '5364511885',
+               phone:         '05364511885',
                is_subscribed: true
              })
 
